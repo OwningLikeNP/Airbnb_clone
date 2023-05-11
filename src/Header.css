@@ -1,0 +1,99 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+}
+.header__icon{
+    object-fit: contain;
+    height: 100px;
+    margin-left: 20px;
+}
+
+
+.header__center{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: fit-content;
+    padding: 10px;
+    height: 30px;
+    border-radius: 999px;
+    border: 1px solid lightgray;
+}
+
+.header__center > input{
+    border: none;
+    width: 400px;
+    padding: 10px;
+    outline-width: 0;
+    
+    
+}
+
+.header__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    margin-right: 80px;
+}
+
+.typography{
+    max-height: 600px;
+    max-width: 400px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 100px;
+    min-height: 50px;
+    display: flex;
+    padding: 2px;
+    
+
+}
+
+.typography > img{
+    object-fit: fill;
+    margin: 3px;
+    min-width: 50px;
+    min-height: 10px;
+    max-width: 500px;
+    max-height: 300px;
+    width: 100%;
+    padding: 2px;
+    transition: transform 100ms ease-in;
+    cursor: pointer
+    
+}
+
+
+.typography >img:hover {
+transform: scale(1.07);
+background-color: #ff7779;
+}
+
+.tooltip{
+    background-color: white !important;
+    font-weight: 700 !important;
+    text-transform: inherit !important;
+    color: #ff7779 !important;
+}
+
+.img > div{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: black;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: visibility 0s, opacity 0.5s linear;
+}
