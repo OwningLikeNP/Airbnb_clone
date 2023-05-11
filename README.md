@@ -16,20 +16,20 @@ You may also see any lint errors in the console.
 
 ### `Packages used for this project`
 
-Front End: 
+Front End: \
 
-Material UI Core: npm install @material-ui/core 
-Material UI Icons: npm install @material-ui/icons 
-Material UI Date Range Picker: npm install react-date-range-picker 
-React Router: npm install react-router-dom 
-Axios: npm install axios 
-Date-FNS: npm install date-fns
-
-Back End: 
-Express: npm install express 
-MySQL: npm install mysql 
-CORS: npm install cors 
-Nodemon: npm install nodemon
+Material UI Core: npm install @material-ui/core \
+Material UI Icons: npm install @material-ui/icons \
+Material UI Date Range Picker: npm install react-date-range-picker \
+React Router: npm install react-router-dom \
+Axios: npm install axios \
+Date-FNS: npm install date-fns\
+\
+Back End: \
+Express: npm install express \
+MySQL: npm install mysql \
+CORS: npm install cors \
+Nodemon: npm install nodemon\
 
 ### `npm test`
 
