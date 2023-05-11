@@ -16,7 +16,7 @@ You may also see any lint errors in the console.
 
 ### `Packages used for this project`
 
-Front End: \
+Front End: 
 
 Material UI Core: npm install @material-ui/core \
 Material UI Icons: npm install @material-ui/icons \
@@ -29,7 +29,7 @@ Back End: \
 Express: npm install express \
 MySQL: npm install mysql \
 CORS: npm install cors \
-Nodemon: npm install nodemon\
+Nodemon: npm install nodemon
 
 ### `npm test`
 
