@@ -3,13 +3,13 @@ import './Home.css';
 import Banner from './Banner'
 import Card from './Card'
 
-// ES7 snippets to do 'rfce'
+// Home page of the app
 
 function Home() {
     return (
         <div className='home'>
             <Banner />
-
+                   {/* Hard coded some Card params for homepage display */}
             <div className='home__section'>
             <Card
                 src="https://images.unsplash.com/photo-1507691640734-887fa7be3377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"

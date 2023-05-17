@@ -9,24 +9,26 @@ import {useNavigate} from 'react-router-dom'
 
 
 function Search() {
+ //Search component to select dates and number of guests
 
-    const [startDate, setStartDate] = useState (new Date());
-    const [endDate, setEndDate] = useState (new Date());
-    const navigate = useNavigate();
-    const [guests, setGuests] = useState(2);
-    const selectionRange = {
+
+    const [startDate, setStartDate] = useState (new Date()); //to store start date
+    const [endDate, setEndDate] = useState (new Date()); //to store end date
+    const navigate = useNavigate(); //to navigate to a different component
+    const [guests, setGuests] = useState(2); //to store guest count
+    const selectionRange = { //to store selection range chosen by user
         startDate: startDate,
         endDate: endDate,
         key: 'selection'
     };
 
-    function handleChange (event)  {
+    function handleChange (event)  { //set guest count as set by user
       setGuests(event.target.value);
     };
     
 
     function handleSubmit(event){
-      
+       // Navigate to seach page with relevant params on submit
       navigate('/search', {
         state:{ 
           start: selectionRange.startDate,
@@ -37,7 +39,7 @@ function Search() {
         },
       })
     }
-    function handleSelect(ranges) {
+    function handleSelect(ranges) { //set start and end date as chosen by user
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     };

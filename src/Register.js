@@ -6,17 +6,23 @@ import axios from 'axios';
 import Popup from './Popup';
 
 function Register() {
-    const navigate = useNavigate();
-    var [email, setEmail] = useState();
-    var [password, setPassword] = useState();
-    var [fname, setFname] = useState();
-    var [lname, setLname] = useState();
-    var [show, setShow] = useState(true);
-    var [popup, setPopup] = useState(false);
+
+    //User registration page
+
+
+    const navigate = useNavigate(); //to navigate to another component
+    var [email, setEmail] = useState(); //to store email entered by user
+    var [password, setPassword] = useState(); //to store password entered by user
+    var [fname, setFname] = useState(); // to store user first name
+    var [lname, setLname] = useState(); // to store user last name
+    var [show, setShow] = useState(true); //toggle for showing/hiding register button
+    var [popup, setPopup] = useState(false); //toggle for showing/hiding popup
     
-    function handleClick (){
+    function handleClick (){ //to navigate to login page on button click
         navigate('/login')
     }
+
+     {/* Send post request with params to store new user info in the database*/}
     const registerUser = () => {
         const options = {
             method: 'POST',
@@ -32,23 +38,15 @@ function Register() {
     
         axios.request(options).then((response) =>{
 
-        
-       
-            
-       
-            console.log(response.data)
-           
+                //hide register button after successful registration and show success popup message instead
                setShow(!show)
                setPopup(true)
+               //redirect to home page after 2 seconds
                 setTimeout(() =>{
                    navigate('/')
                 }, 2000)
                 
-                 
-                
-                 
-        
-            
+
       
         }).catch((error) =>{
             console.log(error)
@@ -59,7 +57,7 @@ function Register() {
     
     
         const handleSubmit = (e) =>{
-     
+                    //call registerUser function to post user info to server upon submit
             registerUser();
             
         }
@@ -77,6 +75,8 @@ function Register() {
         <input value= {password} type='password' placeholder='***********' id='password' name='password' onChange={(e) =>setPassword(e.target.value)} required/>
         <div className='submit'>
         <div className='submit__button'>
+            {/* Showing register button by default. 
+                    After successful registration. hide register button and show success popup message instead*/}
             {
                         show ? (
                             <Button onClick={() => {handleSubmit()}}>Register</Button>

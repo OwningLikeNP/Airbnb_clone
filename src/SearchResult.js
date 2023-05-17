@@ -14,9 +14,10 @@ function SearchResult({
     nights,
 })
 
-
+//Search Result component to display search results on the Search Page
     
 {   
+    //hard coded some property images as my database didn't have any images
     var images = [
     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     "https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
@@ -49,17 +50,18 @@ function SearchResult({
     "https://images.unsplash.com/photo-1462759353907-b2ea5ebd72e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
     "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
     ]
-    var num = Math.floor(Math.random()* images.length)
-    var total = price * nights;
-    var [show, setShow] = useState(true);
-    var [popup, setPopup] = useState(false);
+
+    var num = Math.floor(Math.random()* images.length)  //generating random number to use random images from the images array
+    var total = price * nights; //calculating total cost
+    var [show, setShow] = useState(true); //toggle for showing/hiding button
+    var [popup, setPopup] = useState(false); //toggle for showing/hiding popup
     
     function handleClick(){
-    setPopup(true)
+    setPopup(true) //show popup on click
     }
 
     function changeState() {
-        setShow(!show);
+        setShow(!show); //changing button toggle on click
       }
     
     return (
@@ -88,6 +90,8 @@ function SearchResult({
                         <h3>Price per night: ${price}</h3>
                         <p>Total cost: ${total}</p>
                     </div>
+                    {/* Showing Book Property button by default. 
+                    After click, hide button and show Porperty Booked! popup message instead*/}
                     {
                         show ? (
                             <Button onClick={() => {handleClick(); changeState()}}>Book Property</Button>

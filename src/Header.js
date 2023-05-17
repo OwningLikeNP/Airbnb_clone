@@ -12,14 +12,16 @@ import { Tooltip } from '@material-ui/core'
 import {useNavigate} from 'react-router-dom'
 
 function Header(){ 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const navigate = useNavigate();
+    const [anchorEl, setAnchorEl] = React.useState(null);  //setting anchor value to show or hide popover
+    const navigate = useNavigate(); //To navigate to another component
 
-    const handleClick = (event) => {
+    //function to open popover for region selection when user clicks on search bar
+    const handleClick = (event) => { 
       setAnchorEl(event.currentTarget);
 
     };
     
+    //function to close the popeover when user clicks on a region and navigate to search page with params
     const regionClick = (region_name, region_id) => {
       setAnchorEl(null);
        navigate('/region', {
@@ -30,10 +32,13 @@ function Header(){
       })
            
       }
+      
+      //function to close popover if user clicks elsewhere on the page
     const handleClose = () => {
       setAnchorEl(null);
     };
 
+    //setting open and close functionality for popover
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
     
@@ -42,14 +47,18 @@ function Header(){
     <div className='header'>
       <Link to='/'>
       
-        <img
+        <img //Airbnb logo in the header which will redirect to homepage on click
                     className="header__icon"
                     src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
                     alt=""
                 />
         
         </Link>
-
+        
+        {/* 
+        Search bar which opens Popover with images of all 6 continents, which take you to the seach page of selected region on click
+        Popover from Material UI is used for clean design of region selection 
+        */}
         <div className='header__center'>
                 <input className='searchbar'type="text" aria-describedby={id} variant="contained" onClick={handleClick}></input>
                   <Popover className='popOver'
@@ -63,7 +72,9 @@ function Header(){
                     }}
                   >
                    
-                  <Typography className='typography' >
+                  <Typography className='typography' 
+                  //First row of popover with images for 3 different contients
+                  >
                   
                   <Tooltip title="Africa">
                     
@@ -85,7 +96,9 @@ function Header(){
 
                   </Typography>
                   
-                  <Typography className='typography' >
+                  <Typography className='typography' 
+                  //Second row of popover with images for 3 different contients
+                  >
                     <Tooltip title="Europe & Middle East">
                     <img src="https://as1.ftcdn.net/v2/jpg/03/25/11/50/1000_F_325115078_8sPCA5KOUQncoLqtKcPZBwqck2Foi9yg.jpg"
                     alt="Europe" onClick={() => {regionClick('Europe & Middle East', 3)}}/>
@@ -110,7 +123,9 @@ function Header(){
             <p>Become a Host</p>
             <LanguageIcon />
             <ExpandMoreIcon />
-            <Link to='/login'> <Avatar /></Link>
+            <Link to='/login'
+            //Naviage to login page when click on avatar icon in the header
+            > <Avatar /></Link>
         </div>
     </div>
    

@@ -3,6 +3,8 @@ import './Footer.css'
 
 function Footer()
 {
+
+  //basic footer layout
   return (
     <div className='footer'>
     <p>© 2023 Web Development Project: Airbnb Clone! No rights reserved </p>

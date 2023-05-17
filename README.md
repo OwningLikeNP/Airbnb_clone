@@ -2,69 +2,45 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to Install and Run this Project
 
-In the project directory, you can run:
+To run this project, you need to install Node.js for the server and MySQL Workbench for the Database.
+To get the database up and running, install and launch MySQL Workbench and create a connection with the following parameters: \
 
-### `npm start`
+    host: 'localhost' \
+    user: 'root' \
+    password: 'moazzam' \
+    database: 'IU_db' \
+    Port: 3307 \
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you don't specify above parameters for your SQL Server, you will need to change server connection parameters in the code files.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After setting up the server connection, download 'Database SQL.sql' file from the repository and import it to recreate my database. This will finish the database setup for this project.
 
-### `npm test`
+To run the project, download the full repository by clicking on the green 'Code' button and then selecting 'Download Zip'. Extract the zipped file to your desired location. \
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In your terminal, navigate to the project directory and then into the 'Backend' folder and type npm start to launch the backend server. \
 
-### `npm run build`
+Open another terminal, navigate to the project directory and then type npm start again to run the frontend server. \
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Your Airbnb Clone application should start in your default browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Packages used for this project`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Front End: 
 
-### `npm run eject`
+Material UI Core: npm install @material-ui/core \
+Material UI Icons: npm install @material-ui/icons \
+Material UI Date Range Picker: npm install react-date-range-picker \
+React Router: npm install react-router-dom \
+Axios: npm install axios \
+Date-FNS: npm install date-fns\
+\
+Back End: \
+Express: npm install express \
+MySQL: npm install mysql \
+CORS: npm install cors \
+Nodemon: npm install nodemon
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

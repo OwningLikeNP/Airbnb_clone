@@ -6,16 +6,16 @@ import './Form.css';
 import Popup from './Popup';
 
 function Login() {
-
-    const [login, setLogin] = useState('');
-    const navigate = useNavigate();
-    var [username, setUsername] = useState();
-    var [password, setPassword] = useState();
-    var [popup, setPopup] = useState(false);
-    var [popup_fail, setPopup_fail] = useState(false);
-    var [show, setShow] = useState(true);
+    //Login page
+    const [login, setLogin] = useState('');  //setting login state
+    const navigate = useNavigate(); //to navigate to another component
+    var [username, setUsername] = useState(); //storing user entered username
+    var [password, setPassword] = useState(); //storing user entered password
+    var [popup, setPopup] = useState(false); //show/hide popup for successful login
+    var [popup_fail, setPopup_fail] = useState(false); //show/hide popup for invalid login
+    var [show, setShow] = useState(true); //toggle for displaying/hiding login button
     
- 
+    {/* Send login details to check if user exits*/}
      const getLogin = () => {
         const options = {
             method: 'GET',
@@ -28,11 +28,12 @@ function Login() {
   
         
         axios.request(options).then((response) =>{
-       
             
+                //check valid response from server
                 if(Object.keys(response.data).length > 0)
                 {
-                    setLogin(response.data)
+                     {/* If login details are found in the database, show successful login and redirect to homepage*/}
+                    setLogin(response.data) //storing fetched data
                     if (username === login[0].email && password === login[0].pass){
                     
                         setShow(!show)
@@ -44,17 +45,14 @@ function Login() {
                          }    
                         
                 }else {
+                     {/* If incorrect login details, show login fail for 2 seconds*/}
                         setPopup_fail(true)
                         setTimeout(() =>{
                             setPopup_fail(false)
                         }, 2000)
                  } 
             
-            
-            
-                 
-        
-            
+
       
         }).catch((error) =>{
             console.log(error)
@@ -62,15 +60,15 @@ function Login() {
         
     }     
 
+        
     
-    
-        const handleSubmit = (e) =>{
+        const handleSubmit = (e) =>{  {/* calling login function upon submit*/}
      
             getLogin();
             
         }
-
-        function handleClick (){
+     
+        function handleClick (){  {/* redirecting to register page on button click*/}
             navigate('/register')
         }
 
@@ -82,14 +80,19 @@ function Login() {
     <div className='auth__form'>
         <h2>Login</h2>
     <form className='form' onSubmit={handleSubmit}>
-        
+         {/*Login form layout*/}
         <label for='username'>Username</label>
         <input required value= {username} placeholder='Email Address' id='username' name='username' onChange={(e) =>setUsername(e.target.value)}/>
         <label for='password'>Password</label>
         <input required value= {password} type='password' placeholder='***********' id='password' name='password' onChange={(e) =>setPassword(e.target.value)}/>
         <div className='submit'>
             <div className='submit__button'>
+
+                 {/* Showing loging button by default. 
+                    If login is successful, hide login button and show success popup instead
+                        if loging fails, show loging button as well as failure popul*/}
             {
+                
                         show ? (
                             <Button onClick={() => {handleSubmit()}}>Log in</Button>
                         ) : (

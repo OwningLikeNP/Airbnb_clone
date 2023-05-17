@@ -13,16 +13,17 @@ function App() {
    
   
   return (
+          // Setting routes for app pages 
     <div className="app">
       <Router>
           <Header />
           
           <Routes>
-          <Route path='/register' element={<Register />}/>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/search' element={<SearchPage />} />
-          <Route path='/region' element={<Region />} />
-          <Route path='/' element={<Home />} />
+          <Route path='/register' element={<Register />}/>    {/* Show register page for /register */}
+          <Route path='/login' element={<Login />}/>          {/* Show login page for /login */}
+          <Route path='/search' element={<SearchPage />} />   {/* Show search page for /search */}
+          <Route path='/region' element={<Region />} />       {/* Show region page for /region */}
+          <Route path='/' element={<Home />} />               {/* Show home page for / */}
           
           
           </Routes>
